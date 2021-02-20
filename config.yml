@@ -1,0 +1,15 @@
+#thanks for using this plugin
+#that's my first plugin
+#also i am developer on https://vk.com/manulcraftru
+settings:
+  showtips: true #showing tips in console, u can set this to false
+  regmessage: true #message when plugin registering listeners. For degug, u can set this to false
+messages: #also you an uses color codes, example &c - red, &2 - green
+  invalidnickname: "&cInvalid Nickname!" #message when nickname is not allowed
+  noperm: "&cNo permission!" #message if player hasn't permission to reload plugin
+  reload: "&2Reloaded!" #message if plugin reloaded, also u can use PlugMan
+nicknames: #blacklist nicknames
+- off
+- clear
+- set
+- accept
