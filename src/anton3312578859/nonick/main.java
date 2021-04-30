@@ -11,7 +11,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 //import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class main extends JavaPlugin implements Listener {
@@ -44,7 +44,7 @@ public class main extends JavaPlugin implements Listener {
 	}
 	
 	@EventHandler
-	public void join(PlayerJoinEvent e) {
+	public void join(PlayerLoginEvent e) {
 		//Player p = e.getPlayer();
 		File config = new File(getDataFolder() + File.separator + "config.yml");
     	FileConfiguration configfile = YamlConfiguration.loadConfiguration(config);
@@ -52,7 +52,7 @@ public class main extends JavaPlugin implements Listener {
 		if (list.contains(e.getPlayer().getName())) {
 			String cfgi = getConfig().getString("messages.invalidnickname");
 			cfgi = cfgi.replace("&", "\u00a7");
-			e.getPlayer().kickPlayer(cfgi);
+			e.disallow(PlayerLoginEvent.Result.KICK_BANNED, cfgi);
 		}
 	}
 	
