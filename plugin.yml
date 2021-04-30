@@ -1,6 +1,6 @@
 name: nonick
 main: anton3312578859.nonick.main
-version: 1.0
+version: 2.0
 commands:
   nonick:
     description: reload config
